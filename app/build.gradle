@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 34
+    buildToolsVersion "29.0.3"
+    namespace 'com.example.todoapp' // Replace with your actual package name
+    defaultConfig {
+        applicationId "com.example.todoapp" // Replace with your actual package name
+
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.3.0'  // This should match your Compose version
+    }
+    buildFeatures{
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Correct version of Compose UI Test JUnit 4
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.5.0'
+
+    // Optional: Ensure the other Compose dependencies match
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.material3:material3:1.1.1'
+    implementation 'androidx.compose.ui:ui-tooling-preview:1.4.7'
+    debugImplementation 'androidx.compose.ui:ui-tooling:1.4.7'
+        // Use the latest Kotlin version (for example, 1.8.22)
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"
+
+
+    implementation "androidx.room:room-runtime:2.5.0"  // Use the latest version
+    kapt "androidx.room:room-compiler:2.5.0"
+    implementation "androidx.room:room-ktx:2.5.0"
+
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3'
+
+    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation "androidx.core:core-ktx:1.13.0"
+
+//    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.activity:activity-compose:1.7.2'
+
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3:1.1.1'
+
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.activity:activity:1.9.2'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+
+    implementation 'com.google.zxing:core:3.4.1'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation("androidx.navigation:navigation-compose:2.7.0")
+    implementation 'androidx.appcompat:appcompat:1.6.1' // or the latest version
+    // or the latest version
+    implementation 'androidx.core:core:1.13.0' // or the latest version
+
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+
+   // Use the appropriate version
+  // If using Dagger, replace 2.x with your version
+    // Add other dependencies as needed
+    //database
+
+}
